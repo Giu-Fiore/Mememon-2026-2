@@ -1,6 +1,19 @@
 package cl.uchile.dcc
 package characters
 
-trait Character {
+import cl.uchile.dcc.unit.GameUnit
+import cl.uchile.dcc.weapons.Weapon
+import cl.uchile.dcc.item.Item
 
+/**
+ * Here I will define the common characteristics of both
+ * common characters and magic characters, so the 5 classes
+ * can extend.
+ */
+
+trait Character extends GameUnit{
+  /** every character has an inventory of items, which can be defined as a list */
+  var inventory: List[Item] = List()
+  /** all characters can use a weapon depending on their type. Initially will be defined as None */
+  var weapon: Option[Weapon] = None
 }
