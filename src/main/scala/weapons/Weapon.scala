@@ -13,6 +13,6 @@ trait Weapon extends Item {
   val attack: Double
 /** Weight of the weapon */
   val weight: Double
-/** Owner of the weapon */
-  var owner: Option[Character]
+/** Owner of the weapon. Initially, it has no owner */
+  var owner: Option[Character] = None
 }
