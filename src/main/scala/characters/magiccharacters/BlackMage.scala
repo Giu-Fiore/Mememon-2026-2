@@ -1,14 +1,18 @@
 package cl.uchile.dcc
-package cl.uchile.dcc.characters.magiccharacters
+package characters.commoncharacters
+
+import cl.uchile.dcc.characters.Character
 
 /**
- * Represents one of the magical characters, which cannot use magic. In this case, a Black Mage
+ * Represents the character class of Black Mage, which extends the Character trait
  * @param name name of the character
- * @param hp health points of the character
+ * @param maxHp maximum health points of the character
+ * @param hp current health points of the character
  * @param defense how much can they resist an attack
  * @param weight the heavier they are, the longer they take to execute an action
- * @param mana the mana points they have
- * */
-class blackMage(val name: String, var hp: Int, var defense: Int, val weight: Int, var mana: Int){
+ * @param maxMana maximum mana points of the character
+ * @param mana current mana points of the character
+ */
+class BlackMage(val name: String, val maxHp: Double, var hp: Double, var defense: Double, val weight: Double, val maxMana: Double, var mana: Double){
 
 }
