@@ -1,5 +1,5 @@
 package cl.uchile.dcc
-package enemies
+package enemy
 
 /**
  * Represents the enemies of the game
@@ -10,6 +10,6 @@ package enemies
  * @param weight the heavier they are, the longer they take to execute an action
  * */
 
-class enemies (val name: String, var hp: Int, var defense: Int, val attack: Int, val weight: Int){
+class Enemy(val name: String, var hp: Int, var defense: Int, val attack: Int, val weight: Int){
 
 }

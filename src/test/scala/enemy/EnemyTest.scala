@@ -1,5 +1,5 @@
 package cl.uchile.dcc
-package enemies
+package enemy
 
 class EnemyTest {
 
