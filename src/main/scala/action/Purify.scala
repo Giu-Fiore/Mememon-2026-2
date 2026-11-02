@@ -1,5 +1,5 @@
 package cl.uchile.dcc
-package spells
+package action
 
 /**
  * type of light magic that curses the objective enemy, reducing their actual hp in 15% + magicDamage/2

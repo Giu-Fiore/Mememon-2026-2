@@ -1,5 +1,5 @@
 package cl.uchile.dcc
-package spells
+package action
 
 /**
  * type of dark magic that reduces hp of all units inside the objective panel in magicDamage

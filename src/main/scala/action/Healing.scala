@@ -1,13 +1,14 @@
 package cl.uchile.dcc
-package spells
+package action
 
 
-
-/** 
- * type of light magic that heals the objective character in 20% of their maxHp + magicDamage/4
- * cost of action: 15 mana points
+/**
+ * Magical action
+ * Type of light magic that heals the objective character in 20% of their maxHp + magicDamage/4
+ * Cost of action: 15 mana points
  * */
 
-class Healing  {
+class Healing {
+
 
 }

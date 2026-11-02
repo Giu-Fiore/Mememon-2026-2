@@ -1,6 +1,11 @@
 package cl.uchile.dcc
 package action
 
-class Attack {
-
+/**
+ * Action of attacking another unit
+ * @param name name of the action
+ */
+class Attack extends Action {
+  /** the name of this action will always be attack */
+  val name: String = "Attack"
 }
