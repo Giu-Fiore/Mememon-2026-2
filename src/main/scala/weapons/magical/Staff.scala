@@ -1,6 +1,18 @@
 package cl.uchile.dcc
-package weapons
+package weapons.magical
 
-class Staff {
+import weapons.MagicWeapon
+
+
+/**
+ * magical weapon that can be wielded by Black and White Mages
+ *
+ * @param name name of the weapon
+ * @param attack attack points of the weapon
+ * @param weight weight of the weapon
+ * @param magicAttack points of magic attack used for spells
+ * */
+
+class Staff(val name: String, val attack: Double, val weight: Double, val magicAttack: Double) extends MagicWeapon {
 
 }
