@@ -6,6 +6,6 @@ package action
  * a cost of mana points
  */
 trait Spells extends Action {
-  var manaCost: Double
+  val manaCost: Double
 
 }

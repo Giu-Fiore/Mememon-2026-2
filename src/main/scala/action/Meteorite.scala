@@ -2,9 +2,14 @@ package cl.uchile.dcc
 package action
 
 /**
- * type of dark magic that reduces hp of all units inside the objective panel in magicDamage
- * costs 50 mana points
+ * Magical action
+ * Type of dark magic that reduces hp of all units inside the objective panel in magicDamage
+ * Costs 50 mana points
+ * @param name name of the spell
+ * @param manaCost cost of action
  */
-class Meteorite {
+class Meteorite extends Spells {
+  val name: String = "Meteorite"
+  val manaCost: Double = 50
 
 }

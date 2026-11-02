@@ -2,9 +2,13 @@ package cl.uchile.dcc
 package action
 
 /**
- * type of light magic that curses the objective enemy, reducing their actual hp in 15% + magicDamage/2
- * costs 25 mana points
+ * Magical action
+ * Type of light magic that curses the objective enemy, reducing their actual hp in 15% + magicDamage/2
+ * Costs 25 mana points
+ * @param name name of the spell
+ * @param manaCost cost of action
  */
-class Purify {
-
+class Purify extends Spells {
+  val name: String = "Purify"
+  val manaCost: Double = 25
 }
