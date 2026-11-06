@@ -11,7 +11,7 @@ import cl.uchile.dcc.unit.GameUnit
  * */
 class Player(val name: String) {
   /** list of units that a player can control, initially empty */
-  private val units: ArrayBuffer[GameUnit] = ArrayBuffer()
+  val units: ArrayBuffer[GameUnit] = ArrayBuffer()
   /** adds an unit to player's list of GameUnits */
   def addUnit(unit: GameUnit): Unit = {
     if (!units.contains(unit)){

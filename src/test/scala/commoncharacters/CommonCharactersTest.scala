@@ -3,8 +3,8 @@ package commoncharacters
 
 
 import scala.collection.mutable.ArrayBuffer
-import characters.commoncharacters.{Archer, Knight, Thief}
-import weapons.Weapon
+import cl.uchile.dcc.characters.commoncharacters.{Archer, Knight, Thief}
+import cl.uchile.dcc.weapons.Weapon
 
 class CommonCharactersTest extends munit.FunSuite {
   val archer = new Archer("Susan", 100.0, 100.0, 80.0, 50.0)

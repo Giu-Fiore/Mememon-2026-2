@@ -6,17 +6,17 @@ import cl.uchile.dcc.characters.magiccharacters.{BlackMage, WhiteMage}
 import cl.uchile.dcc.weapons.Weapon
 
 class MagicCharactersTest extends munit.FunSuite {
-  val blackMage = new BlackMage("Bellatrix", 100.0, 100.0, 80.0, 70.0, 100.0, 50.0, 25.0)
-  val whiteMage = new WhiteMage("Ian", 100.0, 100.0, 80.0, 70.0, 100.0, 50.0, 30.0)
+  val blackMage = new BlackMage("Bellatrix", 100.0, 100.0, 80.0, 70.0, 100.0, 50.0)
+  val whiteMage = new WhiteMage("Ian", 100.0, 100.0, 80.0, 70.0, 100.0, 50.0)
 
   test("A Magic Character has its attributes defined") {
     assertEquals(blackMage.name, "Bellatrix")
     assertEquals(whiteMage.maxHp, 100.0)
     assertEquals(blackMage.defense, 80.0)
-    assertEquals(whiteMage.weight, 100.0)
+    assertEquals(whiteMage.weight, 70.0)
     assertEquals(blackMage.hp, 100.0)
-    assertEquals(whiteMage.maxMana, 50.0)
-    assertEquals(blackMage.mana, 30.0)
+    assertEquals(whiteMage.maxMana, 100.0)
+    assertEquals(blackMage.mana, 50.0)
   }
 
   test("A magic character can have an inventory and it's empty by default") {
@@ -34,10 +34,11 @@ class MagicCharactersTest extends munit.FunSuite {
     assertEquals(whiteMage.hp, 80.0)
     assert(whiteMage.maxHp > whiteMage.hp)
   }
-  
+
   test("A magic character can gain more mana points"){
-    blackMage.mana = 40.0
-    
+    blackMage.mana += 20.0
+    assert(blackMage.mana > 50.0)
+
   }
-  
-}  
+
+}
