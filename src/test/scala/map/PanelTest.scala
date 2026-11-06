@@ -3,6 +3,10 @@ package map
 
 import cl.uchile.dcc.map.Panel
 
+/**
+ * Test to verify that the map panels are being implemented correctly
+ */
+
 class PanelTest extends munit.FunSuite {
 
   test("a panel registers its adjacent panels") {
