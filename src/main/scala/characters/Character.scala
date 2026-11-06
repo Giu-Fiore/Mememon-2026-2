@@ -15,6 +15,6 @@ import scala.collection.mutable.ArrayBuffer
 trait Character extends GameUnit{
   /** every character has an inventory of items, which can be defined as a list */
   var inventory: ArrayBuffer[Item] = ArrayBuffer()
-  /** all characters can use a weapon depending on their type. Initially will be defined as None */
+  /** all characters can use a weapon depending on their type. Initially will be defined as None since they can equip one during the game*/
   var weapon: Option[Weapon] = None
 }
