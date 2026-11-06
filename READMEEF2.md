@@ -12,6 +12,8 @@ Para la resolución de esta entrega se tomaron en consideración los feedback en
 -  Weapon: extiende de Item para las distintas armas usables por personajes.
 -  MagicWeapon: extiende Weapon, agregando puntos de ataque mágico.
 -  Potion: extiende de Item para las distintas pociones consumibles dentro del juego
+- Source: ya que las entidades que ejecutan acciones pueden ser diversas unidades u objetos del juego
+- Target: similar a Source, las acciones pueden tener efecto en distintas unidades u objetos.
 A partir de estos, creé las distintas clases utilizables dentro del juego.
 
 *Clases particulares:* en este caso, dejé Enemy, TurnScheduler, Panel, Player y GameController como clases normales, ya que tendrán sus implementaciones específicas. 
