@@ -4,6 +4,7 @@ package characters
 import cl.uchile.dcc.unit.GameUnit
 import cl.uchile.dcc.weapons.Weapon
 import cl.uchile.dcc.item.Item
+import scala.collection.mutable.ArrayBuffer
 
 /**
  * Here I will define the common characteristics of both
@@ -13,7 +14,7 @@ import cl.uchile.dcc.item.Item
 
 trait Character extends GameUnit{
   /** every character has an inventory of items, which can be defined as a list */
-  var inventory: List[Item] = List()
+  var inventory: ArrayBuffer[Item] = ArrayBuffer()
   /** all characters can use a weapon depending on their type. Initially will be defined as None */
   var weapon: Option[Weapon] = None
 }

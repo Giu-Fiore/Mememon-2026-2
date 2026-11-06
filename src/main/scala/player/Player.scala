@@ -21,5 +21,4 @@ class Player(val name: String) {
   /** a player would be defeated if all of his character units have 0 hp or less
    * depending on how much damaged they've received*/
   def isDefeated: Boolean = units.forall(unit => unit.hp <= 0)
-
 }
