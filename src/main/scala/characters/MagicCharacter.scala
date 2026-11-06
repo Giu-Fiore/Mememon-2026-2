@@ -5,6 +5,5 @@ trait MagicCharacter extends Character {
   /** maximum mana points of the character */
   val maxMana: Double
   /** current mana points of the character */
-  var mana: Double
-
+  protected var mana: Double
 }

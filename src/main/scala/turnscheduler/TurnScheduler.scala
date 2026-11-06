@@ -10,8 +10,8 @@ import cl.uchile.dcc.enemy.Enemy
  * Coordinates combat and action bar of the units in combat
  */
 class TurnScheduler {
-  val units: ArrayBuffer[GameUnit] = ArrayBuffer()
-  val actionBar: MutableMap[GameUnit, Double] = MutableMap()
+  private val units: ArrayBuffer[GameUnit] = ArrayBuffer()
+  private val actionBar: MutableMap[GameUnit, Double] = MutableMap()
 
   /** adds a new combat unit to the scheduler with its action bar  */
   def addUnit(unit: GameUnit): Unit ={
@@ -27,10 +27,10 @@ class TurnScheduler {
   }
 
   /**gets the maximum action bar of a combat unit*/
-  def maxActionBar(unit: GameUnit): Double = {
+  private def maxActionBar(unit: GameUnit): Double = {
     unit match {
       case character: Character =>
-        val weightWeapon = character.weapon.map(_.weight).getOrElse(0.0)
+        val weightWeapon = character.equippedWeapon.map(_.weight).getOrElse(0.0)
         character.weight + (0.5 * weightWeapon)
       case enemy: Enemy =>
         enemy.weight
@@ -60,13 +60,13 @@ class TurnScheduler {
 
 
   /** checks if a unit has its action bar complete to the max*/
-  def isComplete(unit: GameUnit): Boolean = {
+  private def isComplete(unit: GameUnit): Boolean = {
     actionBar.get(unit).exists(_>=maxActionBar(unit))
   }
 
   /** scheduler has to return units that completed their actionBar
    * on a higher to lower excedent after completing their actionBar */
-  def getReadyUnits: List[GameUnit] = {
+  private def getReadyUnits: List[GameUnit] = {
     units
       .filter(unit => isComplete(unit))
       .sortBy(unit => maxActionBar(unit) - actionBar(unit))
@@ -80,7 +80,5 @@ class TurnScheduler {
   def turnUnit: Option[GameUnit]={
     getReadyUnits.headOption
   }
-
-
 }
 

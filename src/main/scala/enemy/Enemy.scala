@@ -13,4 +13,6 @@ import cl.uchile.dcc.unit.GameUnit
  * @param weight the heavier they are, the longer they take to execute an action
   */
 
-class Enemy (val name: String, val maxHp: Double, var hp: Double, var defense: Double, val weight: Double, val attack: Double) extends GameUnit
+class Enemy (val name: String, val maxHp: Double, var hp: Double, var defense: Double, val weight: Double, val attack: Double) extends GameUnit {
+
+}
