@@ -1,6 +1,7 @@
 package cl.uchile.dcc
 package map
 
+import scala.collection.mutable.ArrayBuffer
 import cl.uchile.dcc.unit.GameUnit
 
 /**
@@ -11,13 +12,19 @@ import cl.uchile.dcc.unit.GameUnit
  */
 class Panel(val x: Int, val y: Int) {
   /** list of units in the panel */
-  var units: List[GameUnit] = List()
+  var units: ArrayBuffer[GameUnit] = ArrayBuffer()
+  /** add units to a panel */
+  def addUnit(unit: GameUnit): Unit = {
+    if (!units.contains(unit)) {
+      units += unit
+      unit.setPanel(this)
+    }
+  }
   /** list of nearby panels */
-  var nearPanels: List[Panel] = List()
+  var nearPanels: ArrayBuffer[Panel] = ArrayBuffer()
   /** we define a function to add a panel adjacent to the current one */
   def addNeighbor(panel: Panel): Unit = {
     nearPanels = nearPanels :+ panel
-
   }
 }
 
