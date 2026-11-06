@@ -49,15 +49,38 @@ class TurnScheduler {
     }
   }
 
-  /** resets action bar of all units */
-  def resetAll():Unit ={
-    units.foreach{
-      unit => actionBar(unit) = 0.0
+  /**  increase the actionBar of all the units*/
+  def increaseActionBar(amount: Double): Unit ={
+    if(amount > 0.0) {
+      units.foreach {
+        unit => actionBar(unit) = actionBar(unit) + amount
+      }
     }
   }
+
+
   /** checks if a unit has its action bar complete to the max*/
   def isComplete(unit: GameUnit): Boolean = {
     actionBar.get(unit).exists(_>=maxActionBar(unit))
   }
+
+  /** scheduler has to return units that completed their actionBar
+   * on a higher to lower excedent after completing their actionBar */
+  def getReadyUnits: List[GameUnit] = {
+    units
+      .filter(unit => isComplete(unit))
+      .sortBy(unit => maxActionBar(unit) - actionBar(unit))
+      .toList
+  }
+
+  /**scheduler has to get the only Unit which turn is it*/
+  /**since it has them in order based on their excent, the current turn will be
+   * for the unit with the highest amount
+   */
+  def turnUnit: Option[GameUnit]={
+    getReadyUnits.headOption
+  }
+
+
 }
 

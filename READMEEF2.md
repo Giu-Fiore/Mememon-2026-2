@@ -18,3 +18,5 @@ A partir de estos, creé las distintas clases utilizables dentro del juego.
 
 *Atributos numéricos:* elegí aquellos de este estilo como Double ya que, como algunas acciones requieren porcentajes respecto de ciertas cantidades, sería más sencillo de operar (además me guié del auxiliar 7)
 
+*Protección y privacidad de parámetros*
+
