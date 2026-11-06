@@ -15,4 +15,8 @@ trait Weapon extends Item {
   val weight: Double
 /** Owner of the weapon. In an initial state, it has no owner */
   var owner: Option[Character] = None
+/** Define the posibility to have an owner */
+  def addOwner(character: Character): Unit = {
+    owner = Some(character)
+  }
 }
