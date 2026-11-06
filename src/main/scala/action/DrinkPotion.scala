@@ -7,9 +7,9 @@ import cl.uchile.dcc.characters.{Character, MagicCharacter}
 /** Action of drinking a potion
  * */
 
-class DrinkPotion extends Action {
+class DrinkPotion extends ItemAction {
   val name: String = "Drink potion"
   /**List of items that can be used*/
-  val potions: List[Potion]
+
 
 }

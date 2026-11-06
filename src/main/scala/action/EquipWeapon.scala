@@ -10,7 +10,7 @@ import cl.uchile.dcc.characters.{Character, MagicCharacter}
 /** Action of equipping a weapon 
  * @param name name of the action
  * */
-class EquipWeapon extends Action {
+class EquipWeapon extends ItemAction {
   val name: String = "Equip weapon"
 
   /** list of possible items to use*/
