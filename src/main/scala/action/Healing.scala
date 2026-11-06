@@ -12,6 +12,6 @@ package action
 
 class Healing extends Spells{
   val name: String = "Healing Spell"
-  val manaCost: Double = 15
+  val manaCost: Double = 15.0
 
 }

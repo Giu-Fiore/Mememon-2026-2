@@ -14,4 +14,7 @@ Para la resolución de esta entrega se tomaron en consideración los feedback en
 -  Potion: extiende de Item para las distintas pociones consumibles dentro del juego
 A partir de estos, creé las distintas clases utilizables dentro del juego.
 
-*Clases particulares:* en este caso, dejé Enemy, TurnScheduler, Panel, Player y GameController como clases normales, ya que tendrán sus implementaciones específicas.
+*Clases particulares:* en este caso, dejé Enemy, TurnScheduler, Panel, Player y GameController como clases normales, ya que tendrán sus implementaciones específicas. 
+
+*Atributos numéricos:* elegí aquellos de este estilo como Double ya que, como algunas acciones requieren porcentajes respecto de ciertas cantidades, sería más sencillo de operar (además me guié del auxiliar 7)
+

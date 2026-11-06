@@ -10,6 +10,6 @@ package action
  */
 class Meteorite extends Spells {
   val name: String = "Meteorite"
-  val manaCost: Double = 50
+  val manaCost: Double = 50.0
 
 }

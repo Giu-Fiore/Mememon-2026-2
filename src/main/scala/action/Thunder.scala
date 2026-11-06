@@ -11,5 +11,5 @@ package action
 
 class Thunder extends Spells {
   val name: String = "Thunder"
-  val manaCost: Double = 20
+  val manaCost: Double = 20.0
 }

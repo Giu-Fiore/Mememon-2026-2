@@ -10,5 +10,5 @@ package action
  */
 class Purify extends Spells {
   val name: String = "Purify"
-  val manaCost: Double = 25
+  val manaCost: Double = 25.0
 }
