@@ -19,15 +19,15 @@ class CommonCharactersTest extends munit.FunSuite {
   }
 
   test("A common character can have an inventory and it's empty by default"){
-    assert(archer.inventory.isEmpty)
-    assert(knight.inventory.isEmpty)
-    assert(thief.inventory.isEmpty)
+    assert(archer.getInventory.isEmpty)
+    assert(knight.getInventory.isEmpty)
+    assert(thief.getInventory.isEmpty)
   }
 
   test("A common character can have a slot for a weapon, which is empty by default to start"){
-    assert(archer.weapon.isEmpty)
-    assert(knight.weapon.isEmpty)
-    assert(thief.weapon.isEmpty)
+    assert(archer.equippedWeapon.isEmpty)
+    assert(knight.equippedWeapon.isEmpty)
+    assert(thief.equippedWeapon.isEmpty)
   }
 
   test("A common character can have less Hp points compared to their max"){

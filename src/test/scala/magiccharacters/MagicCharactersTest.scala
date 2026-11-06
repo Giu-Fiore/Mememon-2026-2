@@ -20,13 +20,13 @@ class MagicCharactersTest extends munit.FunSuite {
   }
 
   test("A magic character can have an inventory and it's empty by default") {
-    assert(blackMage.inventory.isEmpty)
-    assert(whiteMage.inventory.isEmpty)
+    assert(blackMage.getInventory.isEmpty)
+    assert(whiteMage.getInventory.isEmpty)
   }
 
   test("A magic character can have a slot for a weapon, which is empty by default to start") {
-    assert(blackMage.weapon.isEmpty)
-    assert(whiteMage.weapon.isEmpty)
+    assert(blackMage.equippedWeapon.isEmpty)
+    assert(whiteMage.equippedWeapon.isEmpty)
   }
 
   test("A magic character can have less Hp points compared to their max") {

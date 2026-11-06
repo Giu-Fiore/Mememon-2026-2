@@ -12,7 +12,10 @@ import cl.uchile.dcc.unit.GameUnit
  */
 class Panel(val x: Int, val y: Int) {
   /** list of units in the panel */
-  var units: ArrayBuffer[GameUnit] = ArrayBuffer()
+  private val units: ArrayBuffer[GameUnit] = ArrayBuffer()
+
+  /** returns a list of units*/
+  def getUnit: List[GameUnit] = units.toList
   /** add units to a panel */
   def addUnit(unit: GameUnit): Unit = {
     if (!units.contains(unit)) {
@@ -21,8 +24,10 @@ class Panel(val x: Int, val y: Int) {
     }
   }
   /** list of nearby panels */
-  var nearPanels: ArrayBuffer[Panel] = ArrayBuffer()
-  /**define adjacent panels of the map if they share an x or y coordinate*/
+  private var nearPanels: ArrayBuffer[Panel] = ArrayBuffer()
+  /** returns a list of near panels */
+  def getNearPanels: List[Panel] = nearPanels.toList
+  /**define adjacent panels of the map if they are separated by 1 value of x or y coordinate*/
   def isAdjacent(panel: Panel): Boolean = {
     math.abs(x - panel.x) + math.abs(y-panel.y) == 1
   }

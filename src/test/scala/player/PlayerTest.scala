@@ -14,7 +14,7 @@ class PlayerTest extends munit.FunSuite {
   test("Creates a player with an empty list of units to start"){
     val player = new Player("Player 1")
     assertEquals(player.name, "Player 1")
-    assert(player.units.isEmpty)
+    assert(player.getUnits.isEmpty)
   }
 
   test("A player can add units to their empty list") {
@@ -22,11 +22,11 @@ class PlayerTest extends munit.FunSuite {
     val gorgon = new Enemy("Gorgon", 120.0, 120.0,100.0, 80.0, 40.0)
     val player = new Player("Player 1")
     player.addUnit(archer)
-    assertEquals(player.units, ArrayBuffer[GameUnit](archer))
+    assertEquals(player.getUnits, List[GameUnit](archer))
     assert(!player.isDefeated)
 
     player.addUnit(gorgon)
-    assertEquals(player.units, ArrayBuffer(archer, gorgon))
+    assertEquals(player.getUnits, List(archer, gorgon))
     assert(!player.isDefeated)
   }
 
