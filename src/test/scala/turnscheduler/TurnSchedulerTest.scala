@@ -60,4 +60,46 @@ class TurnSchedulerTest extends munit.FunSuite {
     assertEquals(scheduler.getActionBar(archer), Some(4.0))
     assertEquals(scheduler.getActionBar(knight), Some(0.0))
   }
+
+  test("scheduler can assert turn priority between characters"){
+    val archer = new Archer("Susan", 100.0, 100.0, 80.0, 50.0)
+    val knight = new Knight("Peter", 100.0, 80.0, 90.0, 90.0)
+    val sword = new Sword("Sword", 15.0, 4.0)
+    val bow = new Bow("Bow", 12.0, 2.0)
+    knight.equipWeapon(sword)
+    archer.equipWeapon(bow)
+
+    assertEquals(knight.equippedWeapon, Some(sword))
+    assertEquals(archer.equippedWeapon, Some(bow))
+
+    val scheduler = new TurnScheduler()
+    scheduler.addUnit(knight)
+    scheduler.addUnit(archer)
+    scheduler.increaseActionBar(90.0)
+    assertEquals(scheduler.turnUnit, Some(archer))
+  }
+
+  test("scheduler can assert priority between enemies"){
+    val scheduler = new TurnScheduler()
+    val harpy = new Enemy("Harpy", 80.0, 80.0, 50.0, 50.0, 30.0)
+    val orc = new Enemy("Orc", 100.0, 100.0, 120.0, 120.0, 100.0)
+
+    scheduler.addUnit(harpy)
+    scheduler.addUnit(orc)
+    scheduler.increaseActionBar(125.0)
+    assertEquals(scheduler.turnUnit, Some(harpy))
+  }
+
+  test("scheduler can assert priority between an unit with a weapon and one without"){
+    val scheduler = new TurnScheduler()
+    val harpy = new Enemy("Harpy", 80.0, 80.0, 50.0, 50.0, 30.0)
+    val archer = new Archer("Susan", 100.0, 100.0, 50.0, 40.0)
+    val bow = new Bow("Bow", 12.0, 2.0)
+    archer.equipWeapon(bow)
+
+    scheduler.addUnit(harpy)
+    scheduler.addUnit(archer)
+    scheduler.increaseActionBar(60.0)
+    assertEquals(scheduler.turnUnit, Some(archer))
+  }
 }

@@ -21,4 +21,8 @@ trait Character extends GameUnit{
   def getInventory: List[Item] = inventory.toList
   /** consult equipped weapon */
   def equippedWeapon: Option[Weapon] = weapon
+  /** character can equip a weapon */
+  def equipWeapon(newWeapon: Weapon): Unit = {
+    weapon = Some(newWeapon)
+  }
 }

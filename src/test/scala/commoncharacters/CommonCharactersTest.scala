@@ -4,7 +4,7 @@ package commoncharacters
 
 import scala.collection.mutable.ArrayBuffer
 import cl.uchile.dcc.characters.commoncharacters.{Archer, Knight, Thief}
-import cl.uchile.dcc.weapons.Weapon
+import cl.uchile.dcc.weapons.common.{Bow,Sword}
 
 class CommonCharactersTest extends munit.FunSuite {
   val archer = new Archer("Susan", 100.0, 100.0, 80.0, 50.0)
@@ -35,5 +35,17 @@ class CommonCharactersTest extends munit.FunSuite {
     archer.hp = 80.0
     assertEquals(archer.hp, 80.0)
     assert(archer.maxHp > archer.hp)
+  }
+
+  test("A common character can equip a weapon") {
+    val knight = new Knight("Knight", 100.0, 100.0, 5.0, 10.0)
+    val archer = new Archer("Archer", 80.0, 80.0, 4.0, 7.0)
+    val sword = new Sword("Sword", 15.0, 4.0)
+    val bow = new Bow("Bow", 12.0, 2.0)
+    knight.equipWeapon(sword)
+    archer.equipWeapon(bow)
+
+    assertEquals(knight.equippedWeapon, Some(sword))
+    assertEquals(archer.equippedWeapon, Some(bow))
   }
 }
