@@ -20,4 +20,44 @@ class TurnScheduler {
       actionBar(unit)=0.0
     }
   }
+  /**removes a combat unit from the scheduler and its action bar*/
+  def removeUnit(unit: GameUnit): Unit = {
+    units -= unit
+    actionBar.remove(unit)
+  }
+
+  /**gets the maximum action bar of a combat unit*/
+  def maxActionBar(unit: GameUnit): Double = {
+    unit match {
+      case character: Character =>
+        val weightWeapon = character.weapon.map(_.weight).getOrElse(0.0)
+        character.weight + (0.5 * weightWeapon)
+      case enemy: Enemy =>
+        enemy.weight
+    }
+  }
+
+  /**gets the current action bar of a combat unit*/
+  def getActionBar(unit: GameUnit): Option[Double] = {
+    actionBar.get(unit)
+  }
+
+  /**resets action bar of a combat unit*/
+  def resetActionBar(unit: GameUnit): Unit = {
+    if(actionBar.contains(unit)){
+      actionBar(unit)=0.0
+    }
+  }
+
+  /** resets action bar of all units */
+  def resetAll():Unit ={
+    units.foreach{
+      unit => actionBar(unit) = 0.0
+    }
+  }
+  /** checks if a unit has its action bar complete to the max*/
+  def isComplete(unit: GameUnit): Boolean = {
+    actionBar.get(unit).exists(_>=maxActionBar(unit))
+  }
 }
+
