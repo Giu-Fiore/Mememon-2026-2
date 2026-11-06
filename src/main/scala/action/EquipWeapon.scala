@@ -12,6 +12,6 @@ import cl.uchile.dcc.characters.{Character, MagicCharacter}
  * */
 class EquipWeapon extends ItemAction {
   val name: String = "Equip weapon"
-
   /** list of possible items to use*/
+  val items: List[Weapon] = List.empty[Weapon]
 }

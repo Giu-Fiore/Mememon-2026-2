@@ -10,6 +10,5 @@ import cl.uchile.dcc.characters.{Character, MagicCharacter}
 class DrinkPotion extends ItemAction {
   val name: String = "Drink potion"
   /**List of items that can be used*/
-
-
+  val items: List[Potion] = List.empty[Potion]
 }

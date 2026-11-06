@@ -13,7 +13,7 @@ class PanelTest extends munit.FunSuite {
     val panel = new Panel(1, 1)
     val neighbor = new Panel(2, 1)
     panel.addNeighbor(neighbor)
-    assertEquals(panel.nearPanels, List(neighbor))
+    assertEquals(panel.nearPanels.toList, List(neighbor))
 
   }
 }
