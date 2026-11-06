@@ -1,5 +1,5 @@
 package cl.uchile.dcc
-package mapTest
+package map
 
 import cl.uchile.dcc.map.Panel
 
