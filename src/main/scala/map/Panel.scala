@@ -24,7 +24,10 @@ class Panel(val x: Int, val y: Int) {
   var nearPanels: ArrayBuffer[Panel] = ArrayBuffer()
   /** we define a function to add a panel adjacent to the current one */
   def addNeighbor(panel: Panel): Unit = {
-    nearPanels = nearPanels :+ panel
+    if(panel != this && !nearPanels.contains(panel)) {
+      nearPanels += panel
+    }
+
   }
 }
 

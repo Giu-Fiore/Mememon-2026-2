@@ -1,10 +1,15 @@
 package cl.uchile.dcc
 package action
 
-/** Action of drinking a potion 
- * @param name name of the action
+import cl.uchile.dcc.potions.Potion
+import cl.uchile.dcc.characters.{Character, MagicCharacter}
+
+/** Action of drinking a potion
  * */
 
 class DrinkPotion extends Action {
-  val name: String = " Drink potion"
+  val name: String = "Drink potion"
+  /**List of items that can be used*/
+  val potions: List[Potion]
+
 }
