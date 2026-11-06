@@ -1,6 +1,8 @@
 package cl.uchile.dcc
 package controller
 
+import cl.uchile.dcc.player.Player
+
 /**
   * Controlador principal del juego.
   * En esta clase debes implementar la lógica que conecta las distintas
@@ -8,5 +10,5 @@ package controller
   */
 
 class GameController {
-
-}
+  /** create a new player */
+} 

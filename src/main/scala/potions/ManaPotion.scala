@@ -1,10 +1,9 @@
 package cl.uchile.dcc
 package potions
 
-import cl.uchile.dcc.potions.Potion
 
 /**
- * type of potion that restores 30% of mana points of the character that consumes it
+ * Type of potion that restores 30% of mana points of the character that consumes it
  * @param name name of the potion
  */
 

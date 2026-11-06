@@ -1,6 +1,16 @@
 package cl.uchile.dcc
-package weapons
+package weapons.common
 
-class Sword {
+import cl.uchile.dcc.weapons.Weapon
+
+/**
+ * A common class weapon that can be wielded by Knights, Archers and Thieves
+ * @param name name of the weapon
+ * @param attack attack points of the weapon
+ * @param weight weight of the weapon
+ *
+ */
+
+class Sword(val name: String, val attack: Double, val weight: Double) extends Weapon {
 
 }

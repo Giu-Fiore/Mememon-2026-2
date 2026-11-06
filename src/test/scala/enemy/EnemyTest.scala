@@ -1,6 +1,10 @@
 package cl.uchile.dcc
 package enemy
 
-class EnemyTest {
+import cl.uchile.dcc.enemy.Enemy
 
+class EnemyTest extends munit.FunSuite {
+  test("an enemy exists"){
+    val enemy = new Enemy("Harpy", 80, 80, 50, 50, 30)
+  }
 }

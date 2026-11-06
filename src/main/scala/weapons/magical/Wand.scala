@@ -6,7 +6,7 @@ import weapons.MagicWeapon
 
 
 /**
- * magical weapon that can be wielded by Black and White Mages
+ * A magical class weapon that can be wielded by Black and White Mages
  *
  * @param name name of the weapon
  * @param attack attack points of the weapon
