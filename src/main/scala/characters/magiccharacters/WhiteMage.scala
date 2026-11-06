@@ -1,7 +1,8 @@
 package cl.uchile.dcc
 package characters.magiccharacters
 
-import cl.uchile.dcc.characters.Character
+import cl.uchile.dcc.characters.MagicCharacter
+
 
 /**
  * Represents the character class of White Mage, which extends the Character trait
@@ -13,6 +14,6 @@ import cl.uchile.dcc.characters.Character
  * @param maxMana maximum mana points of the character
  * @param mana current mana points of the character
  */
-class WhiteMage(val name: String, val maxHp: Double, var hp: Double, var defense: Double, val weight: Double, val maxMana: Double, var mana: Double) extends Character{
+class WhiteMage(val name: String, val maxHp: Double, var hp: Double, var defense: Double, val weight: Double, val maxMana: Double, var mana: Double) extends MagicCharacter{
 
 }
