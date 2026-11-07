@@ -25,4 +25,11 @@ trait Character extends GameUnit{
   def equipWeapon(newWeapon: Weapon): Unit = {
     weapon = Some(newWeapon)
   }
+
+  /** action bar depends on a character's weight and equipped weapon */
+  def actionBarMax: Double = {
+    val weaponWeight = equippedWeapon.map(_.weight).getOrElse(0.0)
+    weight+ 0.5 * weaponWeight
+
+  }
 }

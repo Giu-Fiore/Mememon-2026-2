@@ -27,15 +27,7 @@ class TurnScheduler {
   }
 
   /**gets the maximum action bar of a combat unit*/
-  private def maxActionBar(unit: GameUnit): Double = {
-    unit match {
-      case character: Character =>
-        val weightWeapon = character.equippedWeapon.map(_.weight).getOrElse(0.0)
-        character.weight + (0.5 * weightWeapon)
-      case enemy: Enemy =>
-        enemy.weight
-    }
-  }
+  private def maxActionBar(unit: GameUnit): Double = unit.actionBarMax
 
   /**gets the current action bar of a combat unit*/
   def getActionBar(unit: GameUnit): Option[Double] = {

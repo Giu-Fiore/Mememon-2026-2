@@ -15,4 +15,6 @@ import cl.uchile.dcc.unit.GameUnit
 
 class Enemy (val name: String, val maxHp: Double, var hp: Double, var defense: Double, val weight: Double, val attack: Double) extends GameUnit {
 
+  /** enemy's action bar depends solely on its weight */
+  def actionBarMax: Double = weight
 }
