@@ -1,7 +1,8 @@
 package cl.uchile.dcc
 package weapons.magical
 
-
+import cl.uchile.dcc.characters.commoncharacters.{Archer}
+import cl.uchile.dcc.characters.magiccharacters.{BlackMage, WhiteMage}
 import weapons.MagicWeapon
 
 

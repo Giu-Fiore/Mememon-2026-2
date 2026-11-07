@@ -9,13 +9,14 @@ import cl.uchile.dcc.item.Item
  * types of weapons will have
  */
 trait Weapon extends Item {
-/** Attack points */
+  /** Attack points */
   val attack: Double
-/** Weight of the weapon */
+  /** Weight of the weapon */
   val weight: Double
-/** Owner of the weapon. In an initial state, it has no owner */
+  /** Owner of the weapon. In an initial state, it has no owner */
   var owner: Option[Character] = None
-/** Define the posibility to have an owner */
+
+  /** Define the characteristic to have an owner */
   def addOwner(character: Character): Unit = {
     owner = Some(character)
   }

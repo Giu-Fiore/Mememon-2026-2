@@ -20,5 +20,10 @@ A partir de estos, creé las distintas clases utilizables dentro del juego.
 
 *Atributos numéricos:* elegí aquellos de este estilo como Double ya que, como algunas acciones requieren porcentajes respecto de ciertas cantidades, sería más sencillo de operar (además me guié del auxiliar 7)
 
-*Protección y privacidad de parámetros*
+*Protección y privacidad de parámetros:* En Character mantuve privados el inventario y el arma equipada, y proporcioné métodos para consultarlos. De esta forma, otras clases no acceden directamente a estos atributos. El maná se modeló en MagicCharacter para reutilizar su definición entre los personajes mágicos. 
+
+*Polimorfismo:* Definí para cada unidad de juego su propio valor de barra de acción máxima, ya que esta depende de si es personaje o enemigo, y del arma equipada. Luego en TurnScheduler, se consulta este atributo.
+
+
+
 

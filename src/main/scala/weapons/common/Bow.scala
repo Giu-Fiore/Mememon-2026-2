@@ -1,6 +1,8 @@
 package cl.uchile.dcc
 package weapons.common
 
+import cl.uchile.dcc.characters.commoncharacters.{Knight,Archer}
+import cl.uchile.dcc.characters.magiccharacters.{WhiteMage}
 import weapons.Weapon
 
 /**

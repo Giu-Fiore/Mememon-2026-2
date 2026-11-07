@@ -1,7 +1,8 @@
 package cl.uchile.dcc
 package weapons.common
 
-import cl.uchile.dcc.weapons.Weapon
+import cl.uchile.dcc.characters.commoncharacters.{Knight,Archer,Thief}
+import weapons.Weapon
 
 /**
  * A common class weapon that can be wielded by Knights, Archers and Thieves

@@ -14,7 +14,9 @@ trait Target {
   def receiveAction(action: Action, source: Source): Unit
   /** we define the different effects of different actions on target */
   /** target can receive an attack from a source */
-  def receiveAttack(source: Source): Unit
+  def receiveAttack(source: Source): Unit = {
+
+  }
 
   /** target can be a panel that receives a moving unit* */
   def receiveMove(source: Source): Unit
