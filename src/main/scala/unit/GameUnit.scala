@@ -27,4 +27,6 @@ trait GameUnit {
   def setPanel(panel: Panel): Unit = {
     position = Some(panel)
   }
+  /**  */
 }
+  

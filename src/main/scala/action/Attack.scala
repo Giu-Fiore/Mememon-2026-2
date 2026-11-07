@@ -16,5 +16,6 @@ import cl.uchile.dcc.enemy.Enemy
 class Attack extends Action {
   /** the name of this action will always be attack */
   val name: String = "Attack"
-  /** list of objects that can be used to execute the attack */
+  /** a source can perform an attack on a target */
+
 }
