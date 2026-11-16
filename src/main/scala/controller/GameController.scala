@@ -2,19 +2,27 @@ package cl.uchile.dcc
 package controller
 
 import cl.uchile.dcc.player.Player
+import cl.uchile.dcc.observer.{Observer, Subject}
 
 /**
-  * Controlador principal del juego.
-  * En esta clase debes implementar la lógica que conecta las distintas
-  * entidades de tu modelo, maneja los turnos, y ejecuta las acciones.
+  * Main Controller of the game, considering all the functions
+ * and actions.
+ *
+ * The design pattern that seems more fit for this situation
+ * would be the observer one, since different groups of units will be
+ * changing their state constantly during a match in the game.
+ *
+ * GameController will extend Observer since it will be notified
+ * of all the changes in the game's units
+ *
   */
 
-class GameController {
+class GameController extends Observer{
+  /** gets notifications of the state of a unit */
+  override def update(): Unit = {
 
+  }
 } 
 
-/**
-the design pattern that seems more fit for this situation
-would be the observer one, since different groups of units will be
-changing their state constantly during a match in the game **/
+
 
