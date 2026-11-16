@@ -2,15 +2,19 @@ package cl.uchile.dcc
 package unit
 
 import cl.uchile.dcc.map.Panel
+import cl.uchile.dcc.observer.{Observer, Subject}
+import scala.collection.mutable.ArrayBuffer
 
 /**
  * Here I will define the common characteristics
  * that the different units of the game share
  * such as common characters, magic characters and enemies
  *
+ * This will extend Subject, since its state will change during the game
+ * and has to be notified to the Observer and GameController
  */
 
-trait GameUnit {
+trait GameUnit extends Subject {
   /** name of the unit */
   val name: String
   /** max health of the unit*/
@@ -29,5 +33,11 @@ trait GameUnit {
   }
   /** every unit will have an action bar based on their weight and weapon (if it's a character)*/
   def actionBarMax: Double
+
+  /** registers an observer associated to this unit */
+  override def registerObserver(obs: Observer): Unit
+
+  /** notifies when this unit's state changes */
+  override def notifyObserver(): Unit
 }
 
