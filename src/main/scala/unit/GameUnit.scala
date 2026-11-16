@@ -34,10 +34,19 @@ trait GameUnit extends Subject {
   /** every unit will have an action bar based on their weight and weapon (if it's a character)*/
   def actionBarMax: Double
 
-  /** registers an observer associated to this unit */
-  override def registerObserver(obs: Observer): Unit
+  /** observers registered to this unit */
+  private val observers: ArrayBuffer[Observer] = ArrayBuffer()
+
+  /** registers an observer associated to this unit if it wasn't registered before*/
+  override def registerObserver(obs: Observer): Unit = {
+    if (!observers.contains(obs)) {
+      observers += obs
+    }
+  }
 
   /** notifies when this unit's state changes */
-  override def notifyObserver(): Unit
+  override def notifyObserver(): Unit = {
+    observers.foreach(_.update())
+  }
 }
 
