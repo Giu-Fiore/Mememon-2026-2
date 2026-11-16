@@ -48,5 +48,18 @@ trait GameUnit extends Subject {
   override def notifyObserver(): Unit = {
     observers.foreach(_.update())
   }
+
+  /** case when a unit receives damage and notifies observers */
+  def receiveDamage(damage: Double): Unit = {
+    /** confirms that unit was alive */
+    val alive = hp > 0.0
+    /** current hp of the unit is affected */
+    hp = math.max(0.0, hp - damage)
+    /** if hp is equal to zero, notifies observer */
+    if(alive &&(hp <= 0.0)){
+      notifyObserver()
+    }
+  }
 }
+
 
