@@ -18,6 +18,9 @@ import cl.uchile.dcc.observer.{Observer, Subject}
   */
 
 class GameController extends Observer{
+  /** game controller identifies players */
+  private var player1: Option[Player] = None
+  private var player2: Option[Player] = None
   /** gets notifications of the state of a unit */
   override def update(): Unit = {
 
