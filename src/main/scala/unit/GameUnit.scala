@@ -30,4 +30,4 @@ trait GameUnit {
   /** every unit will have an action bar based on their weight and weapon (if it's a character)*/
   def actionBarMax: Double
 }
-  
+
